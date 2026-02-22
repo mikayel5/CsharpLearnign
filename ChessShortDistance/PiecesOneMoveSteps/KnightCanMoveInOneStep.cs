@@ -1,7 +1,4 @@
 ﻿using ChessShortDistance.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ChessShortDistance
 {
@@ -16,5 +13,6 @@ namespace ChessShortDistance
                    (dx == 1 && dy == 2);
 
         }
+
     }
 }

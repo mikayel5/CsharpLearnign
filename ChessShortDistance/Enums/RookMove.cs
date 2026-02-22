@@ -4,9 +4,11 @@ using System.Text;
 
 namespace ChessShortDistance.Enums
 {
-   public enum KnightMove
+   public enum RookMove
     {
-        UpLeft, UpRight, DownLeft, DownRight,
-        LeftUp, LeftDown, RightUp, RightDown
+        Up,
+        Down,
+        Left,
+        Right
     }
 }
