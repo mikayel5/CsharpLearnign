@@ -67,15 +67,13 @@ namespace ChessShortDistance
 
                     DFS(new Position(nx, ny), target, depth + 1);
 
-                    visited[nx, ny] = false; // backtracking
+                    visited[nx, ny] = false; 
                 }
             }
         }
 
-        // Делаем метод public чтобы вызвать из Program.cs
         public static void RunProgram()
         {
-            // СБРОС состояния (очень важно)
             visited = new bool[N, N];
             pathStack = new Position[N * N];
             bestPath = new Position[N * N];
