@@ -1,0 +1,6 @@
+﻿namespace ChessUniverse.Library.Pieces;
+
+public class Bishop(PieceColor color) : Piece(color, PieceType.Bishop)
+{
+    public override char GetSymbol() => Color == PieceColor.White ? 'B' : 'b';
+}
