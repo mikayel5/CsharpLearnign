@@ -2,13 +2,6 @@
 
 internal class Program
 {
-    static void Main(string[] args)
-    {
-        ChessBoard chessBoard = new ChessBoard();
-        chessBoard.SetStartPosition();
-        PrintBoard(chessBoard);
-    }
-
     public static void PrintBoard(ChessBoard chessBoard)
     {
         Console.WriteLine("    a  b  c  d  e  f  g  h");
@@ -20,8 +13,6 @@ internal class Program
                 bool isLightSquare = (row + col) % 2 == 0;
                 Console.BackgroundColor = isLightSquare ? ConsoleColor.Gray
                     : ConsoleColor.DarkGray;
-                //Console.ForegroundColor = isLightSquare ? ConsoleColor.Black
-                //    : ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
                 var piece = chessBoard[row, col];
                 char symbol = piece?.GetSymbol() ?? '.';
@@ -29,6 +20,22 @@ internal class Program
             }
             Console.ResetColor();
             Console.WriteLine();
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        ChessGame chessGame = new ChessGame();
+
+        while (true)
+        {
+            PrintBoard(chessGame.Board);
+            ConvertProgram.Run(out PiecePosition start, out PiecePosition end);
+            bool success = chessGame.Move(start.Row, start.Col, end.Row, end.Col);
+            if (!success)
+            {
+                Console.WriteLine("I cant go to this position please do again");
+            }
         }
     }
 }
