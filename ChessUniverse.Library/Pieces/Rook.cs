@@ -5,4 +5,11 @@ namespace ChessUniverse.Library.Pieces;
 public class Rook(PieceColor color) : Piece(color, PieceType.Rook)
 {
     public override char GetSymbol() => Color == PieceColor.White ? 'R' : 'r';
+    public override bool CanMove(int fromRow, int fromCol, int toRow, int toCol)
+    {
+        int dx = Math.Abs(fromRow - toRow);
+        int dy = Math.Abs(fromCol - toCol);
+
+        return ((dy == 0) || (dx == 0) ) && (dx != 0 || dy != 0);
+    }
 }

@@ -1,9 +1,8 @@
 ﻿using ChessUniverse.Library.Enums;
-using ChessUniverse.Library.Pieces;
 
 namespace ChessUniverse.Library;
 
-public class Piece(PieceColor color, PieceType type)
+public abstract class Piece(PieceColor color, PieceType type)
 {
     public PieceColor Color { get; } = color;
     public PieceType Type { get; } = type;
@@ -12,4 +11,7 @@ public class Piece(PieceColor color, PieceType type)
     {
         return '?';
     }
+
+    public abstract bool CanMove(int fromRow, int fromCol, int toRow, int toCol);
+  
 }
