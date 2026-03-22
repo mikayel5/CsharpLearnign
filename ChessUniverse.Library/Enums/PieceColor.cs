@@ -1,4 +1,4 @@
-﻿namespace ChessUniverse.Library;
+﻿namespace ChessUniverse.Library.Enums;
 
 public enum PieceColor
 {

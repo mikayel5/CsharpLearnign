@@ -1,4 +1,6 @@
-﻿namespace ChessUniverse.Library.Pieces;
+﻿using ChessUniverse.Library.Enums;
+
+namespace ChessUniverse.Library.Pieces;
 
 public class Rook(PieceColor color) : Piece(color, PieceType.Rook)
 {
